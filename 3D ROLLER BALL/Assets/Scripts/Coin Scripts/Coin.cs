@@ -9,7 +9,7 @@ public class Coin : MonoBehaviour
         if(other.CompareTag(TagManager.PLAYER_TAG))
         {
             //tell the game manager that coin is picked
-            //play coin pickup sound
+            AudioManager.instance.PlayCoinSound();
             gameObject.SetActive(false);
         }
     }

@@ -9,6 +9,9 @@ public class BallController : MonoBehaviour
     private Vector3 moveDirection;
     private bool jump;
 
+    [SerializeField]
+    private GameObject explosion;
+
     private float moveHorizontal, moveVertical;
 
     private void Awake()
@@ -29,6 +32,12 @@ public class BallController : MonoBehaviour
     {
         ball.Move(moveDirection);
         ball.Jump(jump);
+    }
+
+    public void DestroyPlayer()
+    {
+        Instantiate(explosion,transform.position, Quaternion.identity);
+        Destroy(gameObject);
     }
 }//classs
 
