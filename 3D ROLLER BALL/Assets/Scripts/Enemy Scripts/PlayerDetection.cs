@@ -8,7 +8,7 @@ public class PlayerDetection : MonoBehaviour
     {
         if (collision.gameObject.CompareTag(TagManager.PLAYER_TAG))
         {
-            collision.gameObject.GetComponent<BallController>().DestroyPlayer();
+            GameplayManager.instance.GameOver();
         }
     }
 
@@ -16,7 +16,7 @@ public class PlayerDetection : MonoBehaviour
     {
         if (other.CompareTag(TagManager.PLAYER_TAG))
         {
-            other.GetComponent<BallController>().DestroyPlayer();
+            GameplayManager.instance.GameOver();
         }
     }
 }//class

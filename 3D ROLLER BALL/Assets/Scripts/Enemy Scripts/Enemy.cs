@@ -17,7 +17,11 @@ public class Enemy : MonoBehaviour
 
     private void Awake()
     {
-        playerTarget = GameObject.FindWithTag(TagManager.PLAYER_TAG).transform;
+        if (GameObject.FindWithTag(TagManager.PLAYER_TAG) != null)
+        {
+            playerTarget = GameObject.FindWithTag(TagManager.PLAYER_TAG).transform;
+
+        }
     }
 
     private void Start()

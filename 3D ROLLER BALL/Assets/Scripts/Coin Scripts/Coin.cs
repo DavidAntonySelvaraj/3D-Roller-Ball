@@ -6,9 +6,11 @@ public class Coin : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag(TagManager.PLAYER_TAG))
+        //GameplayManager.instance.SetCoinCount(-1);
+
+        if (other.CompareTag(TagManager.PLAYER_TAG))
         {
-            //tell the game manager that coin is picked
+            GameplayManager.instance.SetCoinCount(-1);
             AudioManager.instance.PlayCoinSound();
             gameObject.SetActive(false);
         }
